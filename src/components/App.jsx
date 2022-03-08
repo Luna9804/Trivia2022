@@ -3,10 +3,19 @@ import "../css/App.css";
 import data from "../sample_data.json";
 
 function Question(props) {
-  return <p> {props.question}</p>;
+  return (
+    <div>
+      <p> {props.question}</p>
+      <Answer ans={props.ans} />
+    </div>
+  );
 }
 function NextQuestion() {
-  return <button> Button </button>;
+  return <button> Next Question </button>;
+}
+
+function Answer(props) {
+  return props.ans.map((choice) => <p>{choice}</p>);
 }
 function App() {
   let current_Question = 0;
@@ -14,7 +23,10 @@ function App() {
   return (
     <div className="app">
       Trivia!
-      <Question question={data[current_Question].question.text} />
+      <Question
+        question={data[current_Question].question.text}
+        ans={data[current_Question].question.choices}
+      />
       <NextQuestion />
     </div>
   );
