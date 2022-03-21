@@ -43,7 +43,7 @@ In this unit, coders will work in groups to build a project using HTML, CSS, Rea
 
 ### Goal 2: Render a button on the screen that reveals the correct answer when clicked.
 
-- [ ] Using `useState` in `<App />`, create a boolean state variable called `answerDisplayed` to keep track of whether the correct answer is shown.
+- [x] Using `useState` in `<App />`, create a boolean state variable called `answerDisplayed` to keep track of whether the correct answer is shown.
 - [ ] Add a button to the App component that will update the state to display the correct answer when it is clicked.
 - [ ] Create an onClick function that sets the state to display the correct answer choice when your button is clicked.
   - [ ] HINT: Access the correct answer choice using `sample_data.json`.
