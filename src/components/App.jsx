@@ -15,10 +15,10 @@ function NextQuestion() {
 }
 
 function Answer(props) {
-let newItems = props.ans.map(displayAnswers);
-function displayAnswers(answerChoice){
-  return <p>{answerChoice}</p>
-}
+  let newItems = props.ans.map(displayAnswers);
+  function displayAnswers(answerChoice) {
+    return <p>{answerChoice}</p>;
+  }
   return newItems;
   //return props.ans.map((choice) => <p>{choice}</p>);
 }
@@ -33,11 +33,17 @@ function App() {
         question={data[current_Question].question.text}
         ans={data[current_Question].question.choices}
       />
-      <button onClick ={
-        () => setAnswerDisplayed(data[current_Question].question.choices[data[current_Question].question.correct_choice_index]
+      <button
+        onClick={() =>
+          setAnswerDisplayed(
+            data[current_Question].question.choices[
+              data[current_Question].question.correct_choice_index
+            ]
+          )
         }
-        >
-        Correct Answer {answerDisplayed} </button>
+      >
+        Correct Answer {answerDisplayed}
+      </button>
       {answerDisplayed}
       <NextQuestion />
     </div>
