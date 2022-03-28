@@ -10,7 +10,7 @@ function Question(props) {
     </div>
   );
 }
-function NextQuestion() {
+function NextQuestion(props) {
   return <button> Next Question </button>;
 }
 
@@ -23,9 +23,13 @@ function Answer(props) {
   //return props.ans.map((choice) => <p>{choice}</p>);
 }
 function App() {
-  let current_Question = 0;
+  
   console.log(data);
   let [answerDisplayed, setAnswerDisplayed] = useState("");
+  let [current_Question, setQuestionNumber] = useState(0);
+  function Question_Num(){
+    setQuestionNumber(current_Question + 1);
+  }
   return (
     <div className="app">
       Trivia!
@@ -42,10 +46,11 @@ function App() {
           )
         }
       >
-        Correct Answer {answerDisplayed}
+        Correct Answer
       </button>
       {answerDisplayed}
-      <NextQuestion />
+      <NextQuestion updateQuesNum = {Question_Num} />
+      
     </div>
   );
 }
